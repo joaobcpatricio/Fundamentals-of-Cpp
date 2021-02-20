@@ -1,0 +1,154 @@
+#include <cstdlib>
+#include<iostream>
+#include<string>
+#include<limits>
+#include <vector>
+#include<sstream>
+#include<numeric>
+#include<ctime>
+#include<cmath>
+#include <fstream>
+#include <valarray>
+#include <functional>
+#include <deque>
+#include <iterator>>
+#include <memory>
+#include <stdio.h>
+
+#include<thread>
+#include<chrono>
+#include<mutex>
+
+using namespace std;
+
+int GetRandom(int max){
+    srand(time(NULL));
+    return rand() % max;
+}
+
+void ExecuteThread(int id){
+    auto nowTime = chrono::system_clock::now(); // Get current time
+    
+    time_t sleepTime = chrono::system_clock::to_time_t(nowTime);    // Convert to a time we can output
+    
+    tm myLocalTime = *localtime(&sleepTime);    // Convert to current time zone
+ 
+    // Print full time information
+    cout << "Thread " << id << " Sleep Time : " << ctime(&sleepTime) << endl;
+ 
+    // Get separate pieces
+    cout << "Month : " << myLocalTime.tm_mon << endl;
+    cout << "Day : " << myLocalTime.tm_mday << endl;
+    cout << "Year : " << myLocalTime.tm_year + 1900 << endl;
+    cout << "Hours : " << myLocalTime.tm_hour << endl;
+    cout << "Minutes : " << myLocalTime.tm_min << endl;
+    cout << "Seconds : " << myLocalTime.tm_sec << "\n" << endl;
+ 
+    // Put the thread to sleep for up to 3 seconds
+    this_thread::sleep_for (chrono::seconds(GetRandom(3)));
+    nowTime = chrono::system_clock::now();
+    sleepTime = chrono::system_clock::to_time_t(nowTime);
+    cout << "Thread " << id << " Awake Time : " <<
+            ctime(&sleepTime) << endl;
+}
+
+int main(int argc, char** argv) {
+    
+    /*Multi thread*/
+    // Create a thread and pass a parameter to the function 
+    thread th1 (ExecuteThread, 1);
+   
+    th1.join(); // Join the thread to the main thread  meaning main waits for this thread to stop executing before continuing execution  of code in main
+   
+    thread th2 (ExecuteThread, 2); 
+    th2.join();
+    
+    return 0;
+}
+
+//--------------------------------------------------------------------------
+#include <cstdlib>
+#include<iostream>
+#include<string>
+#include<limits>
+#include <vector>
+#include<sstream>
+#include<numeric>
+#include<ctime>
+#include<cmath>
+#include <fstream>
+#include <valarray>
+#include <functional>
+#include <deque>
+#include <iterator>>
+#include <memory>
+#include <stdio.h>
+#include<thread>
+#include<chrono>
+#include<mutex>
+
+#include<list>
+#include<forward_list>
+
+using namespace std;
+
+
+int main(int argc, char** argv) {
+    
+    /* A deque (Deck) is a dynamic array like vectors except it also allows for insertion or deletion from the front */
+    deque<int> deq1;
+    // Add to the end and front
+    deq1.push_back(5);
+    deq1.push_front(1);
+    cout << "Size : " << deq1.size() << endl;
+    deq1.assign({11,12});
+    cout << "Size : " << deq1.size() << endl;
+//    for(int i: deq1){
+//        cout << i << endl;
+//    }
+    
+    // Access by index
+//    cout << deq1[0] << endl;
+//    cout << deq1.at(1) << endl;
+    
+    // Add at an index using an iterator
+    deque<int>::iterator it = deq1.begin() + 1;
+    deq1.insert(it, 3);
+    
+    // Add multiple values
+    int tempArr[5] = {6,7,8,9,10};
+    deq1.insert(deq1.end(), tempArr, tempArr+5);
+    
+    // Erase at an index
+    deq1.erase(deq1.end());
+    
+    // Erase 1st 2 elements
+    deq1.erase(deq1.begin(), deq1.begin()+2);
+    
+    // Pop first value
+    deq1.pop_front();
+    
+    // Pop last
+    deq1.pop_back();
+ 
+//    for(int i: deq1){
+//        cout << i << endl;
+//    }
+    
+    
+    // Create a deque with 2 50s
+    deque<int> deq2(2,50);
+    
+    // Swap values in deques
+    deq1.swap(deq2);
+    
+    // Delete all values
+    deq1.clear();
+    
+    for(int i: deq1){
+        cout << i << endl;
+    }
+ 
+    
+    return 0;
+}

@@ -1,0 +1,101 @@
+/* 
+ * File:   main.cpp
+ * Author: joaobcpatricio
+ *
+ * Created on 19 de fevereiro de 2021, 17:03
+ */
+
+#include <cstdlib>
+#include<iostream>
+#include<string>
+#include<limits>
+#include <vector>
+#include<sstream>
+#include<numeric>
+#include<ctime>
+#include<cmath>
+#include <fstream>
+#include <valarray>
+#include <functional>
+
+using namespace std;
+
+/* MACRO OBJECT AND FUNCTIONS*/
+#define PI 3.14159
+#define AREA_CIRCLE(radius) (PI * pow(radius, 2))
+
+/* Template funbctions*/
+template <typename T>
+void Times2(T val){
+    cout << val << " * 2 = " <<
+            val * 2 << endl;
+}
+
+template <typename Ti>
+Ti Add(Ti val, Ti val2){
+    return val + val2;
+}
+
+template <typename Tm>
+Tm Max(Tm val, Tm val2){
+    return (val < val2) ? val2 : val;
+}
+
+int main(int argc, char** argv) {
+    
+    /* MACRO OBJECT AND FUNCTIONS*/
+//    cout << "Circle Area " <<
+//            AREA_CIRCLE(5) << endl;
+//    
+    /* Template funbctions*/
+    Times2(5);
+    Times2(5.3);
+    
+    cout << "5 + 4 = " << Add(5, 4) << endl;
+    cout << "5.5 + 4.5 = " << Add(5.5, 4.5) << endl;
+    
+    cout << "Max 4 or 8 = "<<
+            Max(4, 8) << endl;
+    cout << "Max A or B = "<<
+            Max('A', 'B') << endl;
+    cout << "Max Dog or Cat = "<<
+            Max("Dog", "Cat") << endl;
+    
+    
+    return 0;
+}
+
+
+///--------------------------------------------------------------
+/* Template classes*/
+
+template <typename T, typename U>
+class Person{
+    public:
+        T height;
+        U weight;
+        static int numOfPeople;
+        Person(T h, U w){
+            height = h, weight = w;
+            numOfPeople++;
+        }
+        void GetData(){
+            cout << "Height : " <<
+                    height <<
+                    " and weight : " <<
+                    weight <<endl;
+        }
+};
+
+template<typename T, typename U> int Person<T, U>::numOfPeople;
+
+int main(int argc, char** argv) {
+    
+    Person<double, int> mikeTyson(5.83, 216);
+    mikeTyson.GetData();
+    cout << "Number of People : " <<
+            mikeTyson.numOfPeople << endl;
+  
+    
+    return 0;
+}

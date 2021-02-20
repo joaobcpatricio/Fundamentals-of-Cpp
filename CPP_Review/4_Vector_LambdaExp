@@ -1,0 +1,58 @@
+/* 
+ * File:   main.cpp
+ * Author: joaobcpatricio
+ *
+ * Created on 19 de fevereiro de 2021, 17:03
+ */
+
+#include <cstdlib>
+#include<iostream>
+#include<string>
+#include<limits>
+#include<sstream>
+#include<numeric>
+#include<ctime>
+#include<cmath>
+#include <vector>
+#include <algorithm>    //for sort
+
+using namespace std;
+
+vector<int> GenerateRandVect(int numOfNums, int min, int max);
+
+int main(int argc, char** argv) {
+
+    vector<int> vecVals = GenerateRandVect(10, 1 ,50);
+//    sort(vecVals.begin(), vecVals.end(),
+//            [](int x, int y){return x<y; });
+//            for (auto val: vecVals)
+//                cout << val << endl;
+            
+//    vector<int> evenVecVals;
+//    copy_if(vecVals.begin(), vecVals.end(), back_inserter(evenVecVals), [](int x){return (x % 2 ) == 0; }); //lambda expression
+//    for (auto val: evenVecVals)
+//        cout << val << endl;
+    
+    int sum = 0;
+    for_each(vecVals.begin(), vecVals.end(), [&](int x){sum += x;});
+    cout <<  "Sum : " << sum << endl;
+    
+    
+    
+    return 0;
+}
+
+
+vector<int> GenerateRandVect(int numOfNums, int min, int max){
+    vector<int> vecValues;
+    srand(time(NULL));
+    int i = 0, randVal = 0;
+    while(i < numOfNums){
+        randVal = min + rand() % ((max + 1) - min);
+        vecValues.push_back(randVal);
+        i++;
+    }
+    return vecValues;
+    
+}
+

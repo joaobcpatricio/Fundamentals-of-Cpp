@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="100">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <logicalFolder name="HeaderFiles"
+                   displayName="Header Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="ResourceFiles"
+                   displayName="Resource Files"
+                   projectFiles="true">
+    </logicalFolder>
+    <logicalFolder name="SourceFiles"
+                   displayName="Source Files"
+                   projectFiles="true">
+      <itemPath>main.cpp</itemPath>
+    </logicalFolder>
+    <logicalFolder name="TestFiles"
+                   displayName="Test Files"
+                   projectFiles="false"
+                   kind="TEST_LOGICAL_FOLDER">
+    </logicalFolder>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false"
+                   kind="IMPORTANT_FILES_FOLDER">
+      <itemPath>Makefile</itemPath>
+    </logicalFolder>
+    <itemPath>10_List_ForwardList</itemPath>
+    <itemPath>11_AssociativeContainers_MultiSet</itemPath>
+    <itemPath>12_Map</itemPath>
+    <itemPath>13_Stack_Queue_PriorityQ</itemPath>
+    <itemPath>14_Enums_RegularExpressions</itemPath>
+    <itemPath>1_BackUp</itemPath>
+    <itemPath>2_BackUpMain_2</itemPath>
+    <itemPath>3_BackUp_Operators</itemPath>
+    <itemPath>4_Vector_LambdaExp</itemPath>
+    <itemPath>5_Read_Write_InFiles</itemPath>
+    <itemPath>6_Functions_As_Objects</itemPath>
+    <itemPath>7_Macros_TemplateFuncions&amp;Classes</itemPath>
+    <itemPath>8_Queue_Iterators__Malloc&amp;SmartPointers</itemPath>
+    <itemPath>9_Threads__Deques</itemPath>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Debug" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+      </compileType>
+      <item path="10_List_ForwardList" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="11_AssociativeContainers_MultiSet" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="12_Map" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="13_Stack_Queue_PriorityQ" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="14_Enums_RegularExpressions" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="1_BackUp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="2_BackUpMain_2" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="3_BackUp_Operators" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="4_Vector_LambdaExp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="5_Read_Write_InFiles" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="6_Functions_As_Objects" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="7_Macros_TemplateFuncions&amp;Classes" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="8_Queue_Iterators__Malloc&amp;SmartPointers"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="9_Threads__Deques" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+    <conf name="Release" type="1">
+      <toolsSet>
+        <compilerSet>default</compilerSet>
+        <dependencyChecking>true</dependencyChecking>
+        <rebuildPropChanged>false</rebuildPropChanged>
+      </toolsSet>
+      <compileType>
+        <cTool>
+          <developmentMode>5</developmentMode>
+        </cTool>
+        <ccTool>
+          <developmentMode>5</developmentMode>
+        </ccTool>
+        <fortranCompilerTool>
+          <developmentMode>5</developmentMode>
+        </fortranCompilerTool>
+        <asmTool>
+          <developmentMode>5</developmentMode>
+        </asmTool>
+      </compileType>
+      <item path="10_List_ForwardList" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="11_AssociativeContainers_MultiSet" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="12_Map" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="13_Stack_Queue_PriorityQ" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="14_Enums_RegularExpressions" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="1_BackUp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="2_BackUpMain_2" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="3_BackUp_Operators" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="4_Vector_LambdaExp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="5_Read_Write_InFiles" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="6_Functions_As_Objects" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="7_Macros_TemplateFuncions&amp;Classes" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="8_Queue_Iterators__Malloc&amp;SmartPointers"
+            ex="false"
+            tool="3"
+            flavor2="0">
+      </item>
+      <item path="9_Threads__Deques" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

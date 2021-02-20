@@ -1,0 +1,66 @@
+// http://www.newthinktank.com/2019/10/c-tutorial-2019/
+/* 
+ * File:   main.cpp
+ * Author: joaobcpatricio
+ *
+ * Created on 19 de fevereiro de 2021, 17:03
+ */
+
+#include <cstdlib>
+#include<iostream>
+#include<string>
+#include<limits>
+#include<sstream>
+#include<numeric>
+#include<ctime>
+#include<cmath>
+#include <vector>
+
+using namespace std;
+
+    // ---------- STRUCTS ----------
+ 
+// Classes have default private fields and methods
+// while structs have public
+// Structs are used to model new data types, while
+// classes model more complex real world objects
+struct Shape{
+    double length, width;
+    Shape(double l = 1, double w = 1){
+        length = l;
+        width = w;
+    }
+    double Area(){
+        return length * width;
+    }
+private:
+    int id;
+};
+
+//Inherit from a Struct
+struct Circle : Shape{
+    Circle(double width){
+        this->width = width;
+    }
+    double Area(){
+        return 3.14159 * pow((width/2),2);
+    }
+};
+
+int main(int argc, char** argv) {
+
+    Shape shape(10,10);
+    cout << "Square Area : " << shape.Area() << endl;
+    
+    Circle circle(10);
+    cout << "Circle Area : " << circle.Area() << endl;
+    Shape rectangle{10, 15};
+    cout << "Rectangle Area: " << rectangle.Area() << endl;
+    
+
+    
+    
+    return 0;
+}
+
+

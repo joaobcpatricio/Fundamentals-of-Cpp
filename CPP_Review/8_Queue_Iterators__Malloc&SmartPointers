@@ -1,0 +1,134 @@
+
+#include <cstdlib>
+#include<iostream>
+#include<string>
+#include<limits>
+#include <vector>
+#include<sstream>
+#include<numeric>
+#include<ctime>
+#include<cmath>
+#include <fstream>
+#include <valarray>
+#include <functional>
+#include <deque>
+#include <iterator>>
+
+using namespace std;
+
+
+int main(int argc, char** argv) {
+    
+    /* Double endded queue*/
+//    deque<int> nums = {1, 2, 3, 4};
+//    nums.push_front(0);
+//    nums.push_back(5);
+//    for(int x: nums){
+//        cout << x << endl;
+//    }   
+//    cout << nums[0] << endl;
+    
+    /* Iterators 
+     */
+ 
+    vector<int> nums2 = {1, 2, 3, 4};
+    vector<int>::iterator itr;
+    for(itr = nums2.begin(); itr < nums2.end(); itr++){
+        cout << *itr << endl;
+    }
+    
+    vector<int>::iterator itr2 = nums2.begin();
+    advance(itr2, 2);
+    cout << *itr2 << endl;
+    
+    auto itr3 = next(itr2, 1);
+    cout << *itr3 << endl;
+    auto itr4 = prev(itr2, 1);
+    cout << *itr4 << endl;
+    
+    vector<int> nums3 = {1, 4, 5, 6};
+    vector<int> nums4 = {2, 3};
+    auto itr5 = nums3.begin();
+    advance(itr5, 1);
+    copy(nums4.begin(), nums4.end(), inserter(nums3, itr5)); //the interator is after the 1, insert here the nums 4 from the beginning to the end
+    for(int &i: nums3){
+        cout << i << endl;
+    }
+    
+    return 0;
+}
+
+//---------------------------------------------------------------------------------------------------------------------------
+
+#include <cstdlib>
+#include<iostream>
+#include<string>
+#include<limits>
+#include <vector>
+#include<sstream>
+#include<numeric>
+#include<ctime>
+#include<cmath>
+#include <fstream>
+#include <valarray>
+#include <functional>
+#include <deque>
+#include <iterator>>
+#include <memory>
+#include <stdio.h>
+
+using namespace std;
+
+int main(int argc, char** argv) {
+    
+/*Malloc tells how much space to set asside and return the addr to that mem addr
+ */
+//    int amtToStore;
+//    cout << "How many numbers do you want to store : ";
+//    cin >> amtToStore;
+//    
+//    int * pNums;    // Create an int pointer and set aside enough space
+// 
+//    pNums = (int *) malloc(amtToStore * sizeof(int));    // Cast the pointer and define how much space to set aside
+// 
+//    if(pNums != NULL){    // Check if memory was allocated
+//        int i = 0;
+//        while(i < amtToStore){  // Store values
+//            cout << "Enter a Number : ";
+//            cin >> pNums[i];
+//            i++;
+//        }
+//    }
+//    
+//    cout << "You entered these numbers\n";
+//    for(int i = 0; i < amtToStore; i++){
+//        cout << pNums[i] << endl;
+//    }
+//    
+//    // Delete the pointer
+//    delete pNums;
+    
+    /* Smart Pointer
+     */
+      int amtToStore;
+    cout << "How many numbers do you want to store : ";
+    cin >> amtToStore;
+    unique_ptr<int[]> pNums(new int[amtToStore]);   // This memory will be automatically reallocated
+    // unique_ptr can only have one owner so this throws an error unique_ptr<int[]> pNums2 = pNums;
+    // I'll cover how to do this with shared_ptr in a later tutorial
+ 
+    if(pNums != NULL){
+        int i = 0;      
+        while(i < amtToStore){  // Store values
+            cout << "Enter a Number : ";
+            cin >> pNums[i];
+            i++;
+        }
+    } 
+    cout << "You entered these numbers\n";
+    for(int i = 0; i < amtToStore; i++){
+        cout << pNums[i] << endl;
+    }
+    
+    return 0;
+}

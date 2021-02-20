@@ -1,0 +1,52 @@
+
+int main(int argc, char** argv) {
+    
+    // ----- ENUMS -----
+    // Custom data type that assigns names to
+    // constant integers so that a program is
+    // easier to read
+ 
+    // You can define the starting index, or any others
+    enum day{Mon=1, Tues, Wed, Thur, Fri=5};
+ 
+    enum day tuesday = Tues;
+ 
+    cout << "Tuesday is the " << tuesday <<
+            "nd day of the week\n";
+ 
+    // Cycle through days
+    for(int i = Mon; i <= Fri; i++)
+        cout << i << endl;
+ 
+    // ----- END OF ENUMS -----
+    
+    return 0;
+}
+
+//------------------------------------------------------------------------------
+#include <regex>
+
+using namespace std;
+
+
+int main(int argc, char** argv) {
+
+    // The string to search
+    string str = "The ape was at the apex";
+    regex reg ("(ape)[^ ]=?");  //We want to match for ape with or without a space after it
+    
+    smatch matches;    // Provides useful function when you are searching a string
+    
+    if(regex_search(str, matches, reg) == true){    // If there is a match for the regex
+        
+        cout << matches.size() << " Matches" << endl;   // Output the number of matches
+        
+        while(regex_search(str, matches, reg)){ // Cycle through the matches
+        
+            cout << matches.str(1) << endl; // Get the match            
+            cout << "At Index " << matches.position(1) << endl; // Get the index           
+            str = matches.suffix().str();   // Eliminate the previous match and create a new string to search
+        }
+    }
+    return 0;
+}

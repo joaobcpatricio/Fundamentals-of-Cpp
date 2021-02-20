@@ -1,0 +1,82 @@
+
+#include<stack>
+#include<queue>
+
+using namespace std;
+
+
+int main(int argc, char** argv) {
+    
+    /*// ----- STACK -----
+    // Provides an interface for storing elements in a LIFO format */
+    cout << "\n STACK " << endl;
+    stack<string> custs;
+    custs.push("George");
+    custs.push("Louise");
+    custs.push("Florence");
+ 
+    // Get number of elements
+    int size = custs.size();
+ 
+    // Check if empty
+    if(!custs.empty()){
+        for(int i = 0; i < size; i++){
+ 
+            // Get value with top
+            cout << custs.top() << endl;
+ 
+            // Delete last value entered
+            custs.pop();
+        }
+    }
+    
+    cout << "\n QUEUE " << endl;
+     
+    /*/ ----- QUEUE -----
+    // Provides an interface for storing elements in a FIFO
+    // format*/
+    queue<string> cast;
+    cast.push("Zoidberg");
+    cast.push("Bender");
+    cast.push("Leela");
+    int size2 = cast.size();
+ 
+    if(!cast.empty()){
+        for(int i = 0; i < size2; i++){
+ 
+            // Get value with top
+            cout << cast.front() << endl;
+ 
+            // Delete last value entered
+            cast.pop();
+        }
+    }
+ 
+    // ----- END OF QUEUE -----
+ 
+    cout << "\n Priory QUEUE " << endl;
+    // ----- PRIORITY QUEUE -----
+    // Elements are organized with the largest first
+    priority_queue<int> nums;
+    nums.push(4);
+    nums.push(8);
+    nums.push(5);
+    int size3 = nums.size();
+ 
+    if(!nums.empty()){
+        for(int i = 0; i < size3; i++){
+ 
+            // Get value with top
+            cout << nums.top() << endl;
+ 
+            // Delete last value entered
+            nums.pop();
+        }
+    }
+ 
+    // ----- END OF PRIORITY QUEUE -----
+    
+    return 0;
+}
+
+
